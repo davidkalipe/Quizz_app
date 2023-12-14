@@ -1,6 +1,6 @@
 import 'package:quizz_app/models/quiz_question.dart';
 
-const questions = [
+const List<QuizQuestion> questions = [
   QuizQuestion(
     "What are the main building blocks of Flutter UIs ?",
     [
@@ -13,7 +13,7 @@ const questions = [
   QuizQuestion(
     'Who\'s the best player in football in the world ?',
     [
-      'Cristiano Ronaldo',
+      'Cristiano',
       'kilian Mbappe',
       'Lionel Messi',
       'Pele',

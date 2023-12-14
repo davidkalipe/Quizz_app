@@ -26,8 +26,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final currentQuestion = questions[currentQuestionIndex];
-
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -37,7 +35,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              currentQuestion.text,
+              questions[currentQuestionIndex].text,
               style: GoogleFonts.lato(
                   color: const Color.fromARGB(255, 201, 203, 251),
                   fontSize: 24,
@@ -45,7 +43,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
               textAlign: TextAlign.center,
             ),
             const Gap(30),
-            ...currentQuestion.getShuffledAnswer().map((answer) {
+            ...questions[currentQuestionIndex]
+                .getShuffledAnswer()
+                .map((answer) {
               return AnswerButton(
                 answerText: answer,
                 onTap: () {
